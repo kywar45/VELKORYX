@@ -2,7 +2,11 @@ const routes = [
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
-    children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
+    children: [
+      { path: '', component: () => import('pages/IndexPage.vue') },
+      { path: 'configuracion/planta', component: () => import('pages/PlantasPage.vue') },
+      { path: 'configuracion/plantas', redirect: '/configuracion/planta' },
+    ],
   },
 
   // Always leave this as last one,
